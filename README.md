@@ -19,7 +19,7 @@ cd EDA_Tools
 
 chmod 777 opensource_eda_tool_install.sh
 
-./opensource_eda_tool_install.sh
+sudo ./opensource_eda_tool_install.sh
 
 ./vsdflow spi_slave_design_details.csv
 
