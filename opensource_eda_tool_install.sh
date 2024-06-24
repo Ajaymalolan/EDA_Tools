@@ -1,10 +1,12 @@
 sudo apt install gcc-12
 sudo apt install python3
+sudo apt install libeigen3-dev
 mkdir -p work/tools
 mv qrouter-1.4.87.tgz work/tools/.
 mv magic-8.3.486.tgz work/tools/.
 mv netgen-1.5.276.tgz work/tools/.
 mv qflow-1.4.103.tgz work/tools/.
+mv yosys-yosys-0.41.tar.gz work/tools/.
 cd work/tools
 sudo apt-get install build-essential bison flex \
 	libreadline-dev gawk tcl-dev tk-dev libffi-dev git \
@@ -27,7 +29,13 @@ sudo apt-get install -y clang-6.0 --assume-yes
 sudo apt-get install gsl-bin libgsl0-dev --assume-yes
 sudo add-apt-repository ppa:saltmakrell/ppa -y 
 sudo apt-get update
-sudo apt-get install yosys 
+
+tar -xvzf yosys-yosys-0.41.tar.gz
+cd yosys-yosys-0.41/
+make
+sudo make install
+cd ../
+
 git clone https://github.com/rubund/graywolf.git
 cd graywolf/
 mkdir build
@@ -74,9 +82,15 @@ sudo apt-get install libtool --assume-yes
 sudo apt-get install swig --assume-yes
 cd ../
 
-sudo apt install opensta
-
+git clone https://github.com/The-OpenROAD-Project/OpenSTA.git
+cd OpenSTA
+mkdir build
+cd build
+sudo cmake ..
+sudo make
+cd ../
 sudo ln -s $PWD/app/sta /usr/bin/sta
+
 cd ../
 sudo apt-get install tcllib --assume-yes
 
