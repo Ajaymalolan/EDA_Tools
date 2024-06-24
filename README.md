@@ -19,8 +19,8 @@ git clone https://github.com//Ajaymalolan/EDA_Tools.git
 
 cd EDA_Tools
 
-chmod 777 opensource_eda_tool_install.sh
+chmod 777 install_all.sh
 
-sudo ./opensource_eda_tool_install.sh
+sudo ./install_all.sh
 
 ######################
