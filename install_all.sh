@@ -8,10 +8,13 @@ mv netgen-1.5.276.tgz work/tools/.
 mv qflow-1.4.103.tgz work/tools/.
 mv yosys-yosys-0.41.tar.gz work/tools/.
 cd work/tools
-sudo apt-get install build-essential bison flex \
-	libreadline-dev gawk tcl-dev tk-dev libffi-dev git \
-	graphviz xdot pkg-config python3 --assume-yes
+
+sudo apt-get install build-essential clang bison flex \
+		libreadline-dev gawk tcl-dev libffi-dev git \
+		graphviz xdot pkg-config python3 libboost-system-dev \
+		libboost-python-dev libboost-filesystem-dev zlib1g-dev
 sudo apt install libglu1-mesa-dev freeglut3-dev --assume-yes
+
 #wget "https://github.com/Kitware/CMake/releases/download/v3.29.6/cmake-3.29.6.tar.gz"
 #tar -xvzf cmake-3.29.6.tar.gz
 #cd cmake-3.29.6/
