@@ -7,6 +7,7 @@ mv magic-8.3.486.tgz work/tools/.
 mv netgen-1.5.276.tgz work/tools/.
 mv qflow-1.4.103.tgz work/tools/.
 mv yosys-yosys-0.41.tar.gz work/tools/.
+mv eqy-main.tar.gz work/tools/.
 cd work/tools
 
 sudo apt-get install build-essential clang bison flex \
@@ -73,6 +74,12 @@ sudo ./configure
 sudo make
 sudo make install
 cd ../
+
+tar -xvzf eqy-main.tar.gz
+cd eqy-main
+sudo make
+sudo make install
+
 
 tar -xvzf qflow-1.4.103.tgz
 cd qflow-1.4.103
